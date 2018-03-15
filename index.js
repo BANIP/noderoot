@@ -2,10 +2,10 @@
     var express = require("express");
     var path = require("path");
     var app = express();
-    
+    const server = require("http").createServer(app);
+
     const appList = [
-        {name: "dcextract", foldername: "dc-extraction"},
-        {name: "sketch", foldername: "project-sketch"},
+        {name: "uncytick", foldername: "uncyTick"},
     ]
     
     appList.forEach(({name, foldername}) => {
@@ -15,7 +15,7 @@
     
     
     
-    app.listen(8080,(req,res) => {
-        console.log("Express server has started on port 8080");
+    server.listen(8000,(req,res) => {
+        console.log("Express server has started on port 8000");
     });
     
