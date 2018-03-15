@@ -10,12 +10,9 @@
     
     appList.forEach(({name, foldername}) => {
         const serverPath = path.resolve("../",foldername,"server");
-        app.use(`/${name}`, require(serverPath) );
+        app.use(`/${name}`, require(serverPath)(server,app) );
     });
+
+    server.listen(8080,() => console.log("server start"))
     
-    
-    
-    server.listen(8000,(req,res) => {
-        console.log("Express server has started on port 8000");
-    });
     
